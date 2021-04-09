@@ -1,0 +1,63 @@
+
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand text-white">Credit Card JWT Auth System</a>
+  <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+    <div class="column col-sm-4">
+      <img src="/assets/img/MoneyBack.JPG" width="100%" class="img img-responsive">
+      <div class="text-center" style="padding-top:10px">
+      <button class="btn btn-success" (click)="onCardDetailsClick(cardDetails[0].CardTypeId,'MoneyBack')">Get Card Details</button>
+    </div>
+    
+    </div>
+    <div class="column col-sm-4">
+      <img src="/assets/img/Platinum.JPG" width="100%" class="img img-responsive">
+      <div class="text-center" style="padding-top:27px">
+      <button class="btn btn-success my-2 my-sm-0" (click)="onCardDetailsClick(cardDetails[1].CardTypeId,'Platinum')">Get Card Details</button>
+    </div>
+    
+    </div>
+    <div class="column col-sm-4">
+      <img src="/assets/img/Titanium.JPG" width="100%" class="img img-responsive">
+      <div class="text-center" style="padding-top:10px">
+      <button class="btn btn-success my-2 my-sm-0" (click)="onCardDetailsClick(cardDetails[2].CardTypeId,'Titanium')">Get Card Details</button>
+       </div>
+       
+    </div>
+  </div>
+  <div class="col-sm-12 container" *ngIf="showCardDetails">
+    <div>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>
+            Type
+          </th>
+          <th>
+            Limit ($)
+          </th>
+          <th>
+            Annual Charge ($)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+         <td>
+          {{cardType}}
+         </td>
+         <td>
+          {{cardLimit}}
+         </td>
+         <td>
+          {{cardAnnualCharge}}
+         </td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
